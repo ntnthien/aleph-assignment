@@ -2,11 +2,9 @@
 //  ProductCell.swift
 //  Thien Assignment
 //
-//  Created by Do Nguyen on 7/1/18.
-//  Copyright © 2018 Zincer. All rights reserved.
-//
 
 import UIKit
+import Kingfisher
 
 class ProductCell: UICollectionViewCell {
     
@@ -14,12 +12,16 @@ class ProductCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     // MARK: - Setup
-    
+    func setup(item: Product) {
+        self.thumbnailImageView.kf.setImage(with: URL(string: item.image))
+        self.titleLabel.text = item.title
+        self.priceLabel.text = item.price
+    }
 }

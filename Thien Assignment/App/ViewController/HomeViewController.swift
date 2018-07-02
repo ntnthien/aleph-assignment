@@ -15,10 +15,14 @@ class HomeViewController: UIViewController {
     
     // MARK: - Views
     private let appBar = MDCAppBar()
-
+    private let reuseIdentifier = "productCell"
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var AndroidTabVersion: UIButton!
     @IBOutlet weak var appleTabButton: UIButton!
     @IBOutlet weak var tabUnderlineView: UIView!
+    var viewModel: ProductViewModel!
+    private let disposeBag = DisposeBag()
     
     // MARK: - Life Cycles
     
@@ -27,6 +31,8 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view, typically from a nib.
         self.setupAppBar()
+        self.viewModel = ProductViewModel()
+        self.setupCollectionView()
     }
     
     // MARK: - Setup
@@ -60,6 +66,21 @@ class HomeViewController: UIViewController {
     }
     
     
+    func setupCollectionView() {
+        viewModel.getAppleProducts()
+        
+        self.viewModel.productsObservable.bind(to: self.collectionView.rx.items) { collectionView, index, item in
+            
+            let indexPath = IndexPath(row: index, section: 0)
+            
+            if let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as? ProductCell {
+                cell.setup(item: item)
+                return cell
+            } else {
+                return UICollectionViewCell()
+            }
+            }.disposed(by: disposeBag)
+    }
 
 }
 

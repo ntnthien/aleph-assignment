@@ -11,6 +11,10 @@
 		64EB781939AC462EFD319054 /* Pods_Thien_AssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBF48CB40B3F83DA687CA2E /* Pods_Thien_AssignmentTests.framework */; };
 		C2B79D8220E910590026385E /* ApplicationScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B79D8120E910590026385E /* ApplicationScheme.swift */; };
 		C2B79D8420E92F340026385E /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B79D8320E92F340026385E /* ProductCell.swift */; };
+		C2B79D8620E938430026385E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B79D8520E938430026385E /* Product.swift */; };
+		C2B79D8B20E93A050026385E /* ProviderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B79D8A20E93A050026385E /* ProviderHelper.swift */; };
+		C2B79D8D20E93A460026385E /* ProductProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B79D8C20E93A460026385E /* ProductProvider.swift */; };
+		C2B79D9320E99A5D0026385E /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B79D9220E99A5D0026385E /* ProductViewModel.swift */; };
 		C2D9424220E90B4F007AB489 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D9424120E90B4F007AB489 /* AppDelegate.swift */; };
 		C2D9424420E90B4F007AB489 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D9424320E90B4F007AB489 /* HomeViewController.swift */; };
 		C2D9424720E90B4F007AB489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D9424520E90B4F007AB489 /* Main.storyboard */; };
@@ -49,6 +53,10 @@
 		A1669A93CCDBFE44707D6F70 /* Pods-Thien AssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thien AssignmentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thien AssignmentUITests/Pods-Thien AssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C2B79D8120E910590026385E /* ApplicationScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationScheme.swift; sourceTree = "<group>"; };
 		C2B79D8320E92F340026385E /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		C2B79D8520E938430026385E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C2B79D8A20E93A050026385E /* ProviderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderHelper.swift; sourceTree = "<group>"; };
+		C2B79D8C20E93A460026385E /* ProductProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductProvider.swift; sourceTree = "<group>"; };
+		C2B79D9220E99A5D0026385E /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		C2D9423E20E90B4F007AB489 /* Thien Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thien Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D9424120E90B4F007AB489 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2D9424320E90B4F007AB489 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +132,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		C2B79D8920E939F70026385E /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				C2B79D8A20E93A050026385E /* ProviderHelper.swift */,
+				C2B79D8C20E93A460026385E /* ProductProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		C2D9423520E90B4F007AB489 = {
 			isa = PBXGroup;
 			children = (
@@ -149,15 +166,10 @@
 		C2D9424020E90B4F007AB489 /* Thien Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				C2D9424D20E90B52007AB489 /* Info.plist */,
 				C2D9426F20E90C1F007AB489 /* App */,
-				C2D9427520E90C9D007AB489 /* Model */,
-				C2D9427120E90C52007AB489 /* View */,
-				C2D9427320E90C61007AB489 /* ViewModel */,
-				C2D9427220E90C57007AB489 /* ViewController */,
-				C2D9427420E90C6B007AB489 /* Service */,
 				C2D9427020E90C31007AB489 /* Storyboard */,
 				C2B79D8020E90D990026385E /* Resource */,
+				C2D9424D20E90B52007AB489 /* Info.plist */,
 			);
 			path = "Thien Assignment";
 			sourceTree = "<group>";
@@ -183,6 +195,11 @@
 		C2D9426F20E90C1F007AB489 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C2D9427520E90C9D007AB489 /* Model */,
+				C2D9427120E90C52007AB489 /* View */,
+				C2D9427320E90C61007AB489 /* ViewModel */,
+				C2D9427220E90C57007AB489 /* ViewController */,
+				C2D9427420E90C6B007AB489 /* Service */,
 				C2D9424120E90B4F007AB489 /* AppDelegate.swift */,
 				C2B79D8120E910590026385E /* ApplicationScheme.swift */,
 			);
@@ -217,6 +234,7 @@
 		C2D9427320E90C61007AB489 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C2B79D9220E99A5D0026385E /* ProductViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -224,6 +242,7 @@
 		C2D9427420E90C6B007AB489 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				C2B79D8920E939F70026385E /* Provider */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -231,6 +250,7 @@
 		C2D9427520E90C9D007AB489 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2B79D8520E938430026385E /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -392,25 +412,33 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Thien Assignment/Pods-Thien Assignment-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -484,8 +512,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B79D8B20E93A050026385E /* ProviderHelper.swift in Sources */,
 				C2D9424420E90B4F007AB489 /* HomeViewController.swift in Sources */,
 				C2B79D8420E92F340026385E /* ProductCell.swift in Sources */,
+				C2B79D8D20E93A460026385E /* ProductProvider.swift in Sources */,
+				C2B79D9320E99A5D0026385E /* ProductViewModel.swift in Sources */,
+				C2B79D8620E938430026385E /* Product.swift in Sources */,
 				C2B79D8220E910590026385E /* ApplicationScheme.swift in Sources */,
 				C2D9424220E90B4F007AB489 /* AppDelegate.swift in Sources */,
 			);
