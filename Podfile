@@ -14,6 +14,10 @@ target 'Thien Assignment' do
   pod 'MaterialComponents'
   pod 'Parchment'
   
+  # Networking
+  pod 'Moya/RxSwift', '~> 11.0'
+  pod 'Kingfisher'
+  
   target 'Thien AssignmentTests' do
     inherit! :search_paths
     # Pods for testing

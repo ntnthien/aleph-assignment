@@ -1,4 +1,6 @@
 PODS:
+  - Alamofire (4.7.2)
+  - Kingfisher (4.7.0)
   - MaterialComponents (55.0.4):
     - MaterialComponents/ActivityIndicator (= 55.0.4)
     - "MaterialComponents/ActivityIndicator+ColorThemer (= 55.0.4)"
@@ -435,7 +437,14 @@ PODS:
     - MotionInterchange (~> 1.6)
   - MotionInterchange (1.6.0)
   - MotionTransitioning (5.0.0)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
   - Parchment (1.2.0)
+  - Result (3.2.4)
   - RxBlocking (4.1.2):
     - RxSwift (~> 4.0)
   - RxCocoa (4.1.2):
@@ -445,7 +454,9 @@ PODS:
     - RxSwift (~> 4.0)
 
 DEPENDENCIES:
+  - Kingfisher
   - MaterialComponents
+  - Moya/RxSwift (~> 11.0)
   - Parchment
   - RxBlocking (~> 4.0)
   - RxCocoa (~> 4.0)
@@ -454,31 +465,39 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Kingfisher
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
     - MotionAnimator
     - MotionInterchange
     - MotionTransitioning
+    - Moya
     - Parchment
+    - Result
     - RxBlocking
     - RxCocoa
     - RxSwift
     - RxTest
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   MaterialComponents: 059f649876b2e1ed6a623ba689175493422cc7cd
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
   Parchment: e3aa960329b6c081efa352960948eb1125fbdd3e
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   RxTest: e634f15fd2c2cd0e0120132ef7a4f7be69ad0393
 
-PODFILE CHECKSUM: 50588836f4620bb6f78f8d74c151222f0dff54c8
+PODFILE CHECKSUM: 9efb9af31933b5c70ec0d8d2b1d4149fcd938606
 
 COCOAPODS: 1.5.3
