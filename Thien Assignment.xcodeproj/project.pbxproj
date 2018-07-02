@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		12638A3BA5676BD46057DE6B /* Pods_Thien_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FFB3D0AB39C9AEAEA13135 /* Pods_Thien_Assignment.framework */; };
 		64EB781939AC462EFD319054 /* Pods_Thien_AssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBF48CB40B3F83DA687CA2E /* Pods_Thien_AssignmentTests.framework */; };
+		C2848BDC20E9B6720097181D /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2848BDB20E9B6720097181D /* Animator.swift */; };
+		C2848BDE20E9DE3A0097181D /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2848BDD20E9DE3A0097181D /* CustomFlowLayout.swift */; };
 		C2B79D8220E910590026385E /* ApplicationScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B79D8120E910590026385E /* ApplicationScheme.swift */; };
 		C2B79D8420E92F340026385E /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B79D8320E92F340026385E /* ProductCell.swift */; };
 		C2B79D8620E938430026385E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B79D8520E938430026385E /* Product.swift */; };
@@ -51,6 +53,8 @@
 		7509205B8097D210F15048AA /* Pods-Thien Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thien Assignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thien Assignment/Pods-Thien Assignment.release.xcconfig"; sourceTree = "<group>"; };
 		92E6C65A5D558FBD3EF1F579 /* Pods-Thien AssignmentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thien AssignmentUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thien AssignmentUITests/Pods-Thien AssignmentUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A1669A93CCDBFE44707D6F70 /* Pods-Thien AssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thien AssignmentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thien AssignmentUITests/Pods-Thien AssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C2848BDB20E9B6720097181D /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		C2848BDD20E9DE3A0097181D /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		C2B79D8120E910590026385E /* ApplicationScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationScheme.swift; sourceTree = "<group>"; };
 		C2B79D8320E92F340026385E /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		C2B79D8520E938430026385E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				C2B79D8320E92F340026385E /* ProductCell.swift */,
+				C2848BDB20E9B6720097181D /* Animator.swift */,
+				C2848BDD20E9DE3A0097181D /* CustomFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -518,7 +524,9 @@
 				C2B79D8D20E93A460026385E /* ProductProvider.swift in Sources */,
 				C2B79D9320E99A5D0026385E /* ProductViewModel.swift in Sources */,
 				C2B79D8620E938430026385E /* Product.swift in Sources */,
+				C2848BDC20E9B6720097181D /* Animator.swift in Sources */,
 				C2B79D8220E910590026385E /* ApplicationScheme.swift in Sources */,
+				C2848BDE20E9DE3A0097181D /* CustomFlowLayout.swift in Sources */,
 				C2D9424220E90B4F007AB489 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

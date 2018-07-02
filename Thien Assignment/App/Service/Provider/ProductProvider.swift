@@ -22,7 +22,7 @@ extension AlephAPI: TargetType {
         case .getAppleProducts:
             return "apple.json"
         case .getAndroidProducts:
-            return "phone_login"
+            return "android.json"
         }
     }
 

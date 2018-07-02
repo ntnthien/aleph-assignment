@@ -36,6 +36,24 @@ public extension PrimitiveSequence where TraitType == SingleTrait, ElementType =
     }
 }
 
+extension Observable where Element == Response {
+    public func mapArray<T: Codable>(_ type: T.Type, keyPath: String = "") -> Observable<[T]> {
+        return self.flatMap({ (response) -> Observable<[T]> in
+            return Observable<[T]>.create({ (observer) -> Disposable in
+                do {
+                    
+                    let decoder = JSONDecoder()
+                    let users = try decoder.decode([T].self, from: response.data, keyPath: keyPath)
+                    observer.onNext(users)
+                } catch(let error) {
+                    observer.onError(error)
+                }
+                return Disposables.create()
+            })
+        })
+    }
+}
+
 
 public extension ObservableType where E == Data {
     public func map<T>(_ type: T.Type, using decoder: JSONDecoder? = nil) -> Observable<T> where T: Decodable {

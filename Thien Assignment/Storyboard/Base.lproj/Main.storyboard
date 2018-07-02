@@ -42,14 +42,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7q6-OB-NUU">
                                 <rect key="frame" x="20" y="242" width="335" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kN-ml-QEs">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kN-ml-QEs" customClass="MDCFloatingButton">
                                         <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="40"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         <state key="normal" title="Apple">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvZ-gJ-yjQ">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvZ-gJ-yjQ" customClass="MDCFloatingButton">
                                         <rect key="frame" x="167.66666666666663" y="0.0" width="167.33333333333337" height="40"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         <state key="normal" title="Android">
@@ -160,15 +160,21 @@
                             <constraint firstItem="7q6-OB-NUU" firstAttribute="leading" secondItem="JlC-eX-V3s" secondAttribute="leading" id="VR7-Hf-hch"/>
                             <constraint firstItem="ibs-WV-bvV" firstAttribute="width" secondItem="6kN-ml-QEs" secondAttribute="width" id="YYe-YC-1j8"/>
                             <constraint firstItem="QCz-3l-Qou" firstAttribute="leading" secondItem="9yv-xE-oaE" secondAttribute="leading" id="dVq-sA-1MZ"/>
+                            <constraint firstItem="QCz-3l-Qou" firstAttribute="top" secondItem="7q6-OB-NUU" secondAttribute="bottom" constant="33" id="eem-Wc-Ou5"/>
                             <constraint firstItem="JlC-eX-V3s" firstAttribute="leading" secondItem="9yv-xE-oaE" secondAttribute="leading" id="huH-rU-bQH"/>
                             <constraint firstItem="7q6-OB-NUU" firstAttribute="top" secondItem="JlC-eX-V3s" secondAttribute="bottom" constant="40" id="ii6-m5-kZi"/>
                             <constraint firstItem="9yv-xE-oaE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="vhE-7g-sHU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ibs-WV-bvV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Aleph-Labs" largeTitleDisplayMode="always" id="dsh-rY-64h"/>
                     <connections>
-                        <outlet property="AndroidTabVersion" destination="dvZ-gJ-yjQ" id="8CH-x5-JnO"/>
+                        <outlet property="androidTabButton" destination="dvZ-gJ-yjQ" id="A9u-Ee-ydX"/>
                         <outlet property="appleTabButton" destination="6kN-ml-QEs" id="X1B-bP-meZ"/>
                         <outlet property="collectionView" destination="QCz-3l-Qou" id="k8J-48-0OZ"/>
                         <outlet property="tabUnderlineView" destination="ibs-WV-bvV" id="qEE-JJ-Ldq"/>

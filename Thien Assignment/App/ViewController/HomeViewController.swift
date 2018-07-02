@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     private let reuseIdentifier = "productCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var AndroidTabVersion: UIButton!
+    @IBOutlet weak var androidTabButton: UIButton!
     @IBOutlet weak var appleTabButton: UIButton!
     @IBOutlet weak var tabUnderlineView: UIView!
     var viewModel: ProductViewModel!
@@ -28,11 +28,19 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view, typically from a nib.
         self.setupAppBar()
-        self.viewModel = ProductViewModel()
+        let input = ProductViewModel.Input(appleButtonTap: self.appleTabButton.rx.tap.asObservable(), androidButtonTap: self.androidTabButton.rx.tap.asObservable())
+
+        self.viewModel = ProductViewModel(input: input)
+        self.appleTabButton.sendActions(for: .touchUpInside)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.setupCollectionView()
+        
     }
     
     // MARK: - Setup
@@ -65,22 +73,52 @@ class HomeViewController: UIViewController {
         appBar.navigationBar.rightBarButtonItem = barButton
     }
     
+    func reload() {
+        let duration: Double = 5
+
+        UIView.animate(withDuration: duration) {
+            self.collectionView.reloadSections(IndexSet(integer: 0))
+        }
+    }
     
+    var isAppleSelected: Bool = true {
+        didSet {
+            UIView.animate(withDuration: 1) {
+                self.tabUnderlineView.center.x = self.isAppleSelected ? self.appleTabButton.center.x :  self.androidTabButton.center.x
+            }
+        }
+    }
     func setupCollectionView() {
-        viewModel.getAppleProducts()
-        
+        let collectionViewWidth = collectionView.frame.size.width
+        let duration: Double = 1
+        self.viewModel.productsObservable.subscribe(onNext: { (_) in
+            NotificationCenter.default.post(Notification(name: .reloadProductCell))
+        }).disposed(by: self.disposeBag)
+
         self.viewModel.productsObservable.bind(to: self.collectionView.rx.items) { collectionView, index, item in
             
             let indexPath = IndexPath(row: index, section: 0)
-            
+
             if let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as? ProductCell {
                 cell.setup(item: item)
+                
+                if !cell.animated {
+                    print(index)
+                    cell.transform = CGAffineTransform(translationX: collectionViewWidth, y: 0)
+
+                    UIView.animate(withDuration: duration, delay: 0.1 * Double(index), usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                        cell.transform = CGAffineTransform.identity
+                    }, completion: { _ in
+                        cell.animated = true
+                    })
+                }
                 return cell
+                
             } else {
                 return UICollectionViewCell()
             }
             }.disposed(by: disposeBag)
     }
-
+    
 }
 
