@@ -2,9 +2,6 @@
 //  AppDelegate.swift
 //  Thien Assignment
 //
-//  Created by Do Nguyen on 7/1/18.
-//  Copyright © 2018 Zincer. All rights reserved.
-//
 
 import UIKit
 

@@ -6,9 +6,18 @@ target 'Thien Assignment' do
   use_frameworks!
 
   # Pods for Thien Assignment
+  ## Rx
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
-
+  
+  ## UI
+  pod 'MaterialComponents'
+  pod 'Parchment'
+  
+  # Networking
+  pod 'Moya/RxSwift', '~> 11.0'
+  pod 'Kingfisher'
+  
   target 'Thien AssignmentTests' do
     inherit! :search_paths
     # Pods for testing
